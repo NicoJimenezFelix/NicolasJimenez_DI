@@ -1,40 +1,19 @@
-public class Persona{
+public class Persona {
 
-    String nombre, dni, sexo;
+    private String nombre;
+    private String apellido;
+    private String genero;
+    private int edad;
 
-    int edad;
-    double peso, altura;
+    public Persona(String nombre, String apellido, String genero, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.genero = genero;
+        this.edad = edad;
+    }
 
     public Persona() {
     }
-
-    public Persona(String nombre, String dni, String sexo, double peso, double altura, int edad) {
-        this.nombre = null;
-        this.dni = null;
-        this.sexo = null;
-        this.peso = 0;
-        this.altura = 0;
-        this.edad = 0;
-    }
-
-    public Persona(String nombre, int edad, String sexo) {
-        this.dni = null;
-        this.peso = 0;
-        this.altura = 0;
-    }
-
-    public void calcularIMC(double peso, double altura){
-
-        double IMC = (peso / (Math.pow(altura,2)));
-        if (IMC < 20){
-            System.out.println("-1");
-        } else if (IMC > 19 && IMC < 26){
-            System.out.println("0");
-        }else {
-            System.out.println("1");
-        }
-    }
-
 
     public String getNombre() {
         return nombre;
@@ -44,36 +23,20 @@ public class Persona{
         this.nombre = nombre;
     }
 
-    public String getDni() {
-        return dni;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(double altura) {
-        this.altura = altura;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public int getEdad() {
@@ -84,15 +47,4 @@ public class Persona{
         this.edad = edad;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", dni='" + dni + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", peso=" + peso +
-                ", altura=" + altura +
-                ", edad=" + edad +
-                '}';
-    }
 }
